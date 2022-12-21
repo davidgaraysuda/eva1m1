@@ -3,6 +3,7 @@ package com.example.evaluacion.model
 import javax.persistence.*
 import javax.validation.constraints.NotBlank
 import javax.validation.constraints.NotNull
+import javax.validation.constraints.Pattern
 
 @Entity
 @Table(name="assistant")
@@ -16,6 +17,7 @@ class Assistant {
     @NotBlank
     var nombres: String? = null
     @NotNull
+    @NotBlank
     var email: String?=null
     @NotNull
     var institucion: String?=null

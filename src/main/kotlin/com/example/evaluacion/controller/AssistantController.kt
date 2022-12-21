@@ -1,8 +1,8 @@
-package com.example.proyectdg.controller
+package com.example.evaluacion.controller
 
 import com.example.evaluacion.model.Assistant
 //import com.example.proyectdg.model.Assistant
-import com.example.proyectdg.service.AssistantService
+import com.example.evaluacion.service.AssistantService
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
@@ -35,5 +35,10 @@ class AssistantController {
     @PatchMapping
     fun updateName (@RequestBody assistant:Assistant): ResponseEntity<Assistant>{
         return ResponseEntity(assistantService.updateName(assistant), HttpStatus.OK)
+    }
+
+    @DeleteMapping("/delete/{id}")
+    fun delete (@PathVariable("id") id: Long):Boolean?{
+        return assistantService.delete(id)
     }
 }

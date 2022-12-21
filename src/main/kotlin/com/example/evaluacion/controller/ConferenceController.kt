@@ -1,8 +1,8 @@
-package com.example.proyectdg.controller
+package com.example.evaluacion.controller
 
 import com.example.evaluacion.model.Conference
 //import com.example.proyectdg.model.Conference
-import com.example.proyectdg.service.ConferenceService
+import com.example.evaluacion.service.ConferenceService
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
@@ -35,5 +35,10 @@ class ConferenceController {
     @PatchMapping
     fun updateName (@RequestBody conference:Conference): ResponseEntity<Conference>{
         return ResponseEntity(conferenceService.updateName(conference), HttpStatus.OK)
+    }
+
+    @DeleteMapping("/delete/{id}")
+    fun delete (@PathVariable("id") id: Long):Boolean?{
+        return conferenceService.delete(id)
     }
 }

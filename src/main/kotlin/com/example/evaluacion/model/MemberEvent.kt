@@ -13,6 +13,10 @@ class MemberEvent {
     @Id
     @Column(updatable = false)
     var id: Long? = null
+    var code:Long?=null
+    @Column(name="registred_at")
+    var registredAt:Date?=null
+    var assisted:Boolean?=null
     @Column(name="assistant_id")
     @NotNull
     var assistantId: Long?=null

@@ -1,4 +1,4 @@
-package com.example.proyectdg.service
+package com.example.evaluacion.service
 
 import com.example.evaluacion.model.Conference
 import com.example.evaluacion.repository.ConferenceRepository
@@ -46,5 +46,12 @@ class ConferenceService {
         catch (ex:Exception){
             throw ResponseStatusException(HttpStatus.NOT_FOUND,ex.message)
         }
+    }
+
+    fun delete (id: Long?):Boolean?{
+        conferenceRepository.findById(id) ?:
+        throw  Exception()
+        conferenceRepository.deleteById(id!!)
+        return true
     }
 }

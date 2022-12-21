@@ -7,5 +7,5 @@ import org.springframework.stereotype.Repository
 @Repository
 
 interface ConferenceRepository:JpaRepository<Conference, Long?> {
-    fun findById(id:Long?):Conference?
+    fun findById(id:Long?):Conference
 }

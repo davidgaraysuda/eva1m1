@@ -21,6 +21,8 @@ class Conference {
     var speaker: String?=null
     @NotNull
     var hours: Time?=null
+    @Column (name="total_attendees")
+    var totalAttendees: Long?=null
     @Column(name="event_id")
     @NotNull
     var eventId: Long?=null

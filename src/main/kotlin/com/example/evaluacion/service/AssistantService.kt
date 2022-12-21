@@ -1,4 +1,4 @@
-package com.example.proyectdg.service
+package com.example.evaluacion.service
 
 import com.example.evaluacion.model.Assistant
 import com.example.evaluacion.repository.AssistantRepository
@@ -46,5 +46,12 @@ class AssistantService {
         catch (ex:Exception){
             throw ResponseStatusException(HttpStatus.NOT_FOUND,ex.message)
         }
+    }
+
+    fun delete (id: Long?):Boolean?{
+        assistantRepository.findById(id) ?:
+        throw  Exception()
+        assistantRepository.deleteById(id!!)
+        return true
     }
 }

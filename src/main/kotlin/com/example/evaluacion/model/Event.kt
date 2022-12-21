@@ -24,4 +24,6 @@ class Event {
     var endDate: Date?=null
     @NotNull
     var city: String?=null
+    @Column (name="total_attendees")
+    var totalAttendees: Long?=null
 }
